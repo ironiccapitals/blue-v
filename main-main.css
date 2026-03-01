@@ -1,0 +1,673 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+    outline: 0;
+    border: 0;
+    background: transparent;
+    appearance: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+:root {
+    /* --color-white: #fff; */
+    --color-light: #f0eff5;
+    --color-gray-light: #86848c;
+    /* --color-gray-dark: #56555e; */
+    --color-dark: #27282f;
+    --color-primary: rgb(71, 7, 234);
+    --color-success: rgb(34, 202, 75);
+    --color-danger: rgb(255, 67, 54);
+    --color-warnining: rgb(234, 181, 7);
+    --color-purple: rgb(160, 99, 245);
+    --color-primary-light: rgba(71, 7, 234, 0.2);
+    --color-success-light: rgba(34, 202, 75, 0.2);
+    --color-danger-light: rgba(255, 67, 54, 0.2);
+    --color-purple-light: rgba(160, 99, 245, 0.2);
+
+    --card-padding: 1.6rem;
+
+    --radius-1: 0.5rem;
+    --radius-2: 1rem;
+    --radius-3: 1.5rem;
+
+    --transition: all 300ms ease;
+}
+
+/* dark theme variables */
+.dark-theme {
+    --color-white: #131316;
+    --color-light: #23232a;
+    --color-gray-light: #ddd;
+    --color-gray-dark: #adacb5;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    box-sizing: border-box;
+    border: 0;
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    background-image: url('img.jpg') no-repeat;
+    background: var(--color-light);
+    font-family: 'Poppins', sans-serif;
+    transition: var(--transition);
+    color: var(--color-gray-dark);
+    background-size: cover;
+    background-position: center;
+
+    /* background: var(--color-light); */
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-gray-dark);
+    /* display: grid; */
+    grid-template-columns: 17rem auto 30rem;
+    gap: 1rem;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.container {
+    width: 100vw;
+    height: auto;
+    margin-inline: auto;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1.2rem;
+    font-weight: 500;
+
+}
+
+h6 {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    /* color: #fff; */
+}
+
+small {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.text-muted {
+    color: var(--color-gray-light);
+}
+
+.primary {
+    color: var(--color-primary);
+}
+
+.bg-primary {
+    background: var(--color-primary);
+    box-shadow: 0 0.8rem 0.8rem var(--color-primary-light);
+    overflow: hidden;
+}
+
+.bg-primary-light {
+    background: var(--color-primary-light);
+}
+
+.danger {
+    color: var(--color-danger);
+}
+
+.bg-danger {
+    background: var(--color-danger);
+    box-shadow: 0 0.8rem 0.8rem var(--color-danger-light);
+}
+
+.bg-danger-light {
+    background: var(--color-danger-light);
+}
+
+.success {
+    color: var(--color-success);
+}
+
+.bg-success {
+    background: var(--color-success);
+    box-shadow: 0 0.8rem 0.8rem var(--color-success-light);
+}
+
+.bg-success-light {
+    background: var(--color-success-light);
+}
+
+.warning {
+    color: var(--color-warning);
+}
+
+.bg-warning {
+    background: var(--color-warning);
+    box-shadow: 0 0.8rem 0.8rem var(--color-warning-light);
+}
+
+.bg-warning-light {
+    background: var(--color-warning-light);
+}
+
+.purple {
+    color: var(--color-purple);
+}
+
+.bg-purple {
+    background: var(--color-purple);
+    box-shadow: 0 0.8rem 0.8rem var(--color-purple-light);
+}
+
+.bg-purple-light {
+    background: var(--color-purple-light);
+}
+
+.bg-dark {
+    background: var(--color-dark);
+    box-shadow: 0 0.8rem 0.8rem rgba(0, 0, 0, 0.12);
+}
+
+button {
+    cursor: pointer;
+}
+
+
+
+
+
+/* Carousel */
+.carousel {
+    width: 100vw;
+    height: 92vh;
+    overflow: hidden;
+    top: -100%;
+    position: relative;
+}
+
+.carousel .list .item {
+    position: absolute;
+    inset: 0 0 0 0;
+}
+
+.carousel .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .list .item .content {
+    position: absolute;
+    top: 2%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #2f1f3f;
+    text-shadow: 0 5px 10px #0004;
+}
+
+.carousel .list .item .content .des {
+    color: #fff;
+}
+
+.carousel .list .item .content .author {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.carousel .list .item .content .topic {
+    font-weight: bold;
+    font-size: 3.5rem;
+    list-style-type: none;
+    color: #f1683a;
+}
+
+.carousel .list .item .content .des {
+    font-size: 1.5rem;
+}
+
+.carousel .list .item .content .title {
+    color: #1a01f6;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 2.5rem;
+}
+
+.carousel .list .item .content .buttons {
+    display: flex;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 30px;
+    padding: 10px 15px;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.carousel .list .item .content button {
+    background-color: #f1683a;
+    color: #eee;
+    border: 3px solid #fff;
+    letter-spacing: 1px;
+    font-family: Poppins;
+    font-weight: 700;
+    justify-content: space-between;
+    border-radius: 5px;
+    font-style: italic;
+    padding: 3px 5px;
+}
+
+.carousel .list .item .content button:hover {
+    background-color: dodgerblue;
+    color: #fff;
+    border: 2px solid #f1683a;
+    font-style: italic;
+}
+
+.carousel .list .item .content button:nth-child(2) {
+    background-color: #155802;
+    color: #9b9e01;
+    border: 2px solid #eee;
+    font-style: italic;
+}
+
+.carousel .list .item .content button:nth-child(2):hover {
+    background-color: #0a2701;
+    color: #fff;
+    border: 2px solid #f1683a;
+    font-style: italic;
+}
+
+/* thumbnail */
+.thumbnail {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.thumbnail .arrows {
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 2px 10px;
+    background-color: #f1683a;
+    color: #eee;
+    border: 2px solid #000;
+    text-align: center;
+    text-align: center;
+    font-style: italic;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.thumbnail button:hover {
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2px 10px;
+    background-color: dodgerblue;
+    color: #fff;
+    border: 2px solid #eee;
+    text-align: center;
+    font-style: italic;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.thumbnail .item {
+    width: 160px;
+    height: 250px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.thumbnail .content .title {
+    font-size: 1.8rem;
+    color: #f1683a;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.thumbnail .content .des {
+    font-size: 1.2rem;
+    color: #eee;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.thumbnail .item .content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.thumbnail .item .content .title {
+    font-weight: bold;
+}
+
+/* arrows */
+div.arrows {
+    position: absolute;
+    padding: auto;
+    top: 80%;
+    right: 59%;
+    width: auto;
+    max-width: 30%;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.arrows .uil-angle-left,
+div.arrows .uil-angle-right {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #f1683a;
+    border: 2px solid #fff;
+    font-family: monospace;
+    color: #eee;
+    font-weight: bold;
+    font-size: 2.5rem;
+    transition: 0.5s;
+    z-index: 100;
+}
+
+div.arrows .uil-angle-left,
+div.arrows .uil-angle-right:hover {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    border: 2px solid #fff;
+    color: #eee;
+    font-weight: 600;
+    font-size: 2.5rem;
+    transition: 0.5s;
+    z-index: 100;
+}
+
+.carousel .list .item:nth-child(1) {
+    z-index: 1;
+}
+
+.carousel .list .item:nth-child(1) .author,
+.carousel .list .item:nth-child(1) .title,
+.carousel .list .item:nth-child(1) .topic,
+.carousel .list .item:nth-child(1) .des,
+.carousel .list .item:nth-child(1) .buttons {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.carouseln .list .item:nth-child(1) .title {
+    animation-delay: 1.2s;
+}
+
+.carousel .list .item:nth-child(1) .topic {
+    animation-delay: 1.4s;
+}
+
+.carousel .list .item:nth-child(1) .des {
+    animation-delay: 1.6s;
+}
+
+.carousel .list .item:nth-child(1) .buttons {
+    animation-delay: 1.8s;
+}
+
+/* effect next click */
+.carousel.next .list .item:nth-child(1) img {
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+
+@keyframes showImage {
+    to {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1) {
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes showThumbnail {
+    to {
+        width: 150px;
+    }
+}
+
+.carousel.next .thumbnail {
+    transform: translateX(150px);
+    animation: transformThumbnail 0.5s linear 1 forwards;
+}
+
+@keyframes transformThumbnail {
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Effect Prev Click */
+.carousel.prev .list .item:nth-child(2) {
+    z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage 0.5s linear 1 forwards;
+}
+
+@keyframes outImage {
+    to {
+        width: 130px;
+        height: 200px;
+        border-radius: 20px;
+        left: 50%;
+        bottom: 50px;
+    }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1) {
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.carousel.prev .list .item:nth-child(2) .author,
+.carousel.prev .list .item:nth-child(2) .title,
+.carousel.prev .list .item:nth-child(2) .topic,
+.carousel.prev .list .item:nth-child(2) .des,
+.carousel.prev .list .item:nth-child(2) .buttons {
+    animation: contentOut 0.5s 1s linear 1 forwards;
+}
+
+@keyframes contentOut {
+    to {
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.carousel.next .arrows button,
+.carousel.prev .arrows button {
+    pointer-events: none;
+}
+
+/* time */
+.time {
+    width: 0%;
+    height: 5px;
+    background-color: #f1683a;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time {
+    width: 100%;
+    animation: timeRunning 2s linear 1 forwards;
+}
+
+@keyframes timeRunning {
+    to {
+        width: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .carousel .list .item .content {
+        padding-right: 0;
+    }
+
+    .tt,
+    .ds,
+    .au,
+    .tt {
+        font-size: 55px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+    .tt,
+    .ds,
+    .au,
+    .tt {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .tt,
+    .ds,
+    .au,
+    .tt {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .tt,
+    .ds,
+    .au,
+    .tt {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+
+    .tt,
+    .ds,
+    .au,
+    .tt {
+        font-size: 35px;
+    }
+}
+
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
